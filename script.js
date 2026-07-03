@@ -111,7 +111,9 @@ window.addEventListener("scroll", () => {
 
 const modal = document.getElementById("imageModal");
 const modalImg = document.getElementById("modalImg");
-const images = document.querySelectorAll(".card img");
+
+const images = document.querySelectorAll(".card img, .img-card img");
+
 const closeBtn = document.querySelector(".close");
 
 images.forEach(img => {
