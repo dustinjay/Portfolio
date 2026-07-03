@@ -1,0 +1,357 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Poppins', sans-serif;
+}
+
+body{
+  background:#0a0a0a;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* background canvas */
+#bg{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  z-index:-1;
+}
+
+/* NAV */
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:15px 40px;
+  position:sticky;
+  top:0;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter: blur(10px);
+}
+
+.logo{
+  font-weight:700;
+  color:#00ffcc;
+}
+
+nav a{
+  margin-left:15px;
+  color:white;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+nav a:hover{
+  color:#00ffcc;
+}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:80px 20px 50px;
+}
+
+.hero h1{
+  font-size:50px;
+}
+
+.hero h2{
+  color:#00ffcc;
+  margin-top:5px;
+}
+
+.btn{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 20px;
+  background:#00ffcc;
+  color:black;
+  border-radius:8px;
+  text-decoration:none;
+  transition:0.3s;
+}
+
+.btn:hover{
+  transform:scale(1.05);
+}
+
+/* SECTIONS */
+.section{
+  padding:40px 20px;
+  max-width:1000px;
+  margin:auto;
+}
+
+.section h2{
+  margin-bottom:10px;
+  color:#00ffcc;
+}
+
+/* GRID (mas dikit spacing) */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit, minmax(150px, 1fr));
+  gap:10px;
+  margin-top:10px;
+}
+
+.card{
+  background:#151515;
+  padding:15px;
+  border-radius:10px;
+  text-align:center;
+  transition:0.3s;
+  cursor:pointer;
+}
+
+.card:hover{
+  transform:translateY(-5px);
+  background:#1f1f1f;
+}
+
+/* SCROLL REVEAL */
+.reveal{
+  opacity:0;
+  transform:translateY(40px);
+  transition:0.8s ease;
+}
+
+.reveal.active{
+  opacity:1;
+  transform:translateY(0);
+}
+
+.card{
+  overflow:hidden;
+}
+
+.card img{
+  width:100%;
+  height:auto;
+  border-radius:8px;
+  transition:0.3s;
+  display:block;
+}
+
+.card video{
+  width:100%;
+  height:180px;
+  border-radius:8px;
+  object-fit:cover;
+  display:block;
+}
+
+.profile-pic{
+    width:180px;
+    height:180px;
+    border-radius:50%;
+    object-fit:cover;
+    border:5px solid #00ffcc;
+    margin-bottom:20px;
+    box-shadow:0 0 30px rgba(0,255,204,.5);
+    transition:.4s;
+}
+
+.profile-pic:hover{
+    transform:scale(1.05);
+}
+
+.experience-item{
+    margin-top:20px;
+    margin-bottom:35px;
+    padding:20px;
+    background:#151515;
+    border-left:4px solid #00ffcc;
+    border-radius:10px;
+}
+
+.experience-item h4{
+    margin-bottom:10px;
+    color:#00ffcc;
+}
+
+.experience-item p{
+    margin:6px 0;
+}
+
+.experience-item ul{
+    margin-top:12px;
+    margin-left:20px;
+}
+
+.experience-item li{
+    margin-bottom:8px;
+}
+
+#experience h3{
+    margin-top:30px;
+    margin-bottom:15px;
+    color:#ffffff;
+}
+
+#progressbar{
+    position:fixed;
+    top:0;
+    left:0;
+    width:0%;
+    height:4px;
+    background:#00ffcc;
+    z-index:9999;
+    transition:width .1s linear;
+}
+
+.modal{
+    display:none;
+    position:fixed;
+    z-index:99999;
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.9);
+}
+
+.modal-content{
+    display:block;
+    margin:auto;
+    margin-top:40px;
+    max-width:90%;
+    max-height:85%;
+    border-radius:10px;
+    animation:zoom .3s;
+}
+
+@keyframes zoom{
+    from{
+        transform:scale(.8);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+.close{
+    position:absolute;
+    top:20px;
+    right:35px;
+    color:white;
+    font-size:40px;
+    cursor:pointer;
+}
+
+.card img{
+    cursor:pointer;
+}
+
+.video-modal{
+
+display:none;
+
+position:fixed;
+
+top:0;
+
+left:0;
+
+width:100%;
+
+height:100%;
+
+background:rgba(0,0,0,.92);
+
+justify-content:center;
+
+align-items:center;
+
+z-index:999999;
+
+}
+
+.video-modal video{
+
+width:85%;
+
+max-width:1100px;
+
+border-radius:12px;
+
+}
+
+.close-video{
+
+position:absolute;
+
+top:20px;
+
+right:40px;
+
+font-size:45px;
+
+color:white;
+
+cursor:pointer;
+
+}
+
+.portfolio-video{
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.portfolio-video:hover{
+
+transform:scale(1.03);
+
+}
+
+#loader{
+    position:fixed;
+    inset:0;
+    background:#050505;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    z-index:999999;
+}
+
+#loader h1{
+    color:#00ffcc;
+    font-size:50px;
+    letter-spacing:4px;
+}
+
+#loader p{
+    color:white;
+    margin:10px 0 30px;
+}
+
+.loading-bar{
+    width:250px;
+    height:5px;
+    background:#222;
+    border-radius:20px;
+    overflow:hidden;
+}
+
+.loading-fill{
+    height:100%;
+    width:0%;
+    background:#00ffcc;
+    animation:loading 2s forwards;
+}
+
+@keyframes loading{
+    to{
+        width:100%;
+    }
+}
